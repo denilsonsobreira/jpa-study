@@ -17,11 +17,11 @@ import java.time.LocalDate;
 @Data
 public class AlunoForm {
 
-  @NotBlank(message = "Preencha o campo corretamente")
+  @NotBlank(message = "Preencha o campo corretamente!")
   @Size(min = 3, max = 100, message = "'${validatedValue}' precisa estar entre {min} e {max} caracteres")
   private String nome;
 
-  @NotBlank(message = "Preencha o campo corretamente")
+  @NotBlank(message = "Preencha o campo corretamente!")
   @CPF(message = "'${validatedValue}' é inválido!")
   private String cpf;
 
