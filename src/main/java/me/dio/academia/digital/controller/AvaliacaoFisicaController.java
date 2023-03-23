@@ -8,6 +8,7 @@ import me.dio.academia.digital.service.impl.AvaliacaoFisicaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
@@ -24,7 +25,7 @@ public class AvaliacaoFisicaController {
     }
 
     @PostMapping
-    public AvaliacaoFisica create(@RequestBody AvaliacaoFisicaForm avaliacaoForm) throws NotFoundException {
+    public AvaliacaoFisica create(@Valid @RequestBody AvaliacaoFisicaForm avaliacaoForm) throws NotFoundException {
         return avalicaoService.create(avaliacaoForm);
     }
 

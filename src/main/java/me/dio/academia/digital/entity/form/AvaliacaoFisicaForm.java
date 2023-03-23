@@ -4,8 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import me.dio.academia.digital.entity.Aluno;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
 @Data
@@ -14,9 +15,15 @@ import java.util.UUID;
 @Builder
 public class AvaliacaoFisicaForm {
 
+
+  @NotNull(message = "Preencha o campo corretamente")
   private UUID alunoId;
 
+  @NotNull(message = "Preencha o campo corretamente")
+  @DecimalMin(value = "0.1")
   private double peso;
 
+  @NotNull(message = "Preencha o campo corretamente")
+  @DecimalMin(value = "0.1")
   private double altura;
 }
